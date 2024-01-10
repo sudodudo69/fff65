@@ -1,5 +1,19 @@
 authors = ["<oss@fastly.com>"]
-description = "An empty starter kit project template."
+description = ""
 language = "rust"
 manifest_version = 3
-name = "Empty starter for Rust"
+name = "Perform multiple origin requests asynchronously"
+
+[local_server.backends.origin_0]
+      url = "https://httpbin.org"
+
+[local_server.backends.origin_1]
+      url = "https://httpbin.org"
+
+[setup.backends.origin_0]
+address = "httpbin.org"
+port = 443
+
+[setup.backends.origin_1]
+address = "httpbin.org"
+port = 443
